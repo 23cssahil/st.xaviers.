@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Sohel Khan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         /* General Reset */
         body, h1, p, a {
@@ -40,24 +41,24 @@
             position: absolute;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
-            animation: float 10s infinite;
+            animation: float 10s infinite ease-in-out, rotate 20s infinite linear;
         }
 
         .circle:nth-child(1) {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             top: 10%;
             left: 5%;
         }
         .circle:nth-child(2) {
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
             bottom: 15%;
             right: 10%;
         }
         .circle:nth-child(3) {
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
             top: 50%;
             left: 30%;
         }
@@ -71,28 +72,60 @@
             }
         }
 
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
         /* Container Styling */
         .container {
             text-align: center;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 30px 50px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px 30px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
+            animation: fadeIn 2s ease-in-out;
+            width: 75%;
+            max-width: 500px;
         }
 
-        /* Heading Styling */
+        /* Heading with Typing Effect */
         h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            max-width: 100%; /* Ensure text doesn't overflow */
+            border-right: 4px solid #ffffff;
+            animation: typing 3s steps(30, end) forwards, blink 0.6s step-end infinite alternate;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
         }
 
         /* Paragraph Styling */
         p {
-            font-size: 1.2rem;
-            line-height: 1.8;
+            font-size: 1rem;
+            line-height: 1.5;
             margin-bottom: 20px;
         }
 
@@ -100,18 +133,19 @@
         .btn {
             display: inline-block;
             margin: 10px;
-            padding: 12px 25px;
+            padding: 10px 20px;
             background: linear-gradient(135deg, #0984e3, #74b9ff);
             color: #ffffff;
-            font-size: 1rem;
+            font-size: 0.9rem;
             text-decoration: none;
             border-radius: 25px;
-            transition: transform 0.3s, background 0.3s;
+            transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
         }
 
         .btn:hover {
             transform: scale(1.1);
             background: linear-gradient(135deg, #74b9ff, #0984e3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         /* Navigation Menu */
@@ -120,10 +154,10 @@
         }
 
         .nav a {
-            margin: 0 15px;
+            margin: 0 10px;
             color: #ffffff;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1rem;
             border-bottom: 2px solid transparent;
             transition: border-bottom 0.3s;
         }
@@ -132,17 +166,29 @@
             border-bottom: 2px solid #74b9ff;
         }
 
-        /* Media Query for Responsiveness */
+        /* Fade-In Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Media Query for Smaller Screens */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.2rem;
+                font-size: 1.5rem;
             }
             p {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
             .btn {
-                font-size: 0.9rem;
-                padding: 10px 20px;
+                font-size: 0.8rem;
+                padding: 8px 15px;
             }
         }
     </style>
@@ -155,15 +201,14 @@
     </div>
     <div class="container">
         <nav class="nav">
-            <a href="#">Home</a>
+            <a href="#index.html">Home</a>
             <a href="#">About</a>
             <a href="#">Contact</a>
         </nav>
-        <h1>All About Sohel Khan</h1>
+        <h1>About Sohel Khan</h1>
         <p>Hello, my name is <strong>Sohel Khan</strong>. I am the developer of this website. This project is created for educational purposes and to showcase my skills as a web developer.</p>
-        <p>SO my self Sohel khan i am a student of b tech 'CSE' 3<sup>rd</sup> year and currently i work on html,css projects</p>
-        <a href="#" class="btn">Learn More</a>
-        <a href="index.html" class="btn">Back to Home</a>
+        <a href="index.html" class="btn">Learn More</a>
+        <a href="#index.html" class="btn">Back to Home</a>
     </div>
 </body>
 </html>
