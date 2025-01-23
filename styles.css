@@ -11,7 +11,7 @@ header {
     color: rgb(255, 255, 255);
     padding: 20px 10px;
     text-align: center;
-    animation: slideDown 3s ease-out;
+    animation: slideDown 2s ease-out;
 }
 
 header h1 {
